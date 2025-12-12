@@ -1025,7 +1025,14 @@ void UpdateEnemy()
     if (!enemy.active) return;
 
     // если оглушен - уменьшаем таймер и стоим на месте
-    
+    if (enemy.stateTimer > 0)
+    {
+
+
+        //шашритга
+        enemy.stateTimer--;
+        return;
+    }
 
     // замедление: враг ходит раз в N тиков
     const int ENEMY_STEP_DELAY = 4; // чем больше число, тем медленнее
